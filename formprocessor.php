@@ -28,5 +28,6 @@ if(isset($_POST['submit'])){
         echo "Failed to create record";
     }
     mysqli_close($connect);
+    header("Location:index.php");
 }
 ?>
