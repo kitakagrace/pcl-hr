@@ -1,8 +1,8 @@
 <?php
 
-/* 
+
 error_reporting(0); 
-*/
+
 
 $connect = new PDO("mysql:host=localhost; dbname=testhouse", "root", "");
 
@@ -31,17 +31,17 @@ else
 }
 
 $query = "
-SELECT * FROM tbl_webslesson_post 
+SELECT * FROM rep_data 
 ";
 
 if($_POST['query'] != '')
 {
   $query .= '
-  WHERE webslesson_post_title LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" 
+  WHERE rep_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" 
   ';
 }
 
-$query .= 'ORDER BY webslesson_post_id ASC ';
+$query .= 'ORDER BY rep_id ASC ';
 
 $filter_query = $query . 'LIMIT '.$start.', '.$limit.'';
 
@@ -59,7 +59,11 @@ $output = '
 <table class="table table-striped table-bordered">
   <tr>
     <th>ID</th>
-    <th>Post Title</th>
+    <th>Rep Name</th>
+    <th>Rep Phone number</th>
+    <th>Rep Branch</th>
+    <th>Rep Email</th>
+    <th>Rep PR Code</th>
   </tr>
 ';
 if($total_data > 0)
@@ -68,8 +72,12 @@ if($total_data > 0)
   {
     $output .= '
     <tr>
-      <td>'.$row["webslesson_post_id"].'</td>
-      <td>'.$row["webslesson_post_title"].'</td>
+      <td>'.$row["rep_id"].'</td>
+      <td>'.$row["rep_name"].'</td>
+      <td>'.$row["rep_phone_number"].'</td>
+      <td>'.$row["rep_branch"].'</td>
+      <td>'.$row["rep_email"].'</td>
+      <td>'.$row["rep_payroll_code"].'</td>
     </tr>
     ';
   }

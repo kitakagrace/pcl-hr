@@ -15,8 +15,12 @@ if($connect){
 
 
 if(isset($_POST['submit'])){
-    $title = $_POST['webslesson_post_title'];
-    $query = "INSERT INTO tbl_webslesson_post (webslesson_post_title) VALUES ('$title')";
+    $rep_name = $_POST['rep_name'];
+    $rep_phone_number  = $_POST['rep_phone_number'];
+    $rep_branch = $_POST['rep_branch'];
+    $rep_email = $_POST['rep_email'];
+    $rep_payroll_code = $_POST['rep_payroll_code'];
+    $query = "INSERT INTO rep_data (rep_name,rep_phone_number,rep_branch,rep_email,rep_payroll_code) VALUES ('$rep_name','$rep_phone_number','$rep_branch','$rep_email','$rep_payroll_code')";
 
     if (mysqli_query( $connect, $query )) {
         echo "New record created";
