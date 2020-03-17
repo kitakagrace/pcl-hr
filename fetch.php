@@ -37,8 +37,7 @@ SELECT * FROM rep_data
 if($_POST['query'] != '')
 {
   $query .= '
-  WHERE rep_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" 
-  ';
+  WHERE rep_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_phone_number LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_branch LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
 }
 
 $query .= 'ORDER BY rep_id ASC ';
