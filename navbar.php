@@ -9,25 +9,15 @@
   </head>
   <body>
     <br />
-   <?php require "navbar.php"; ?>
-    <div class="container">
-      <div class="start-chapter">
-          <div class= "heading-design">
-          <h1>Save Staff Data</h1>
-          </div>
-          <img src="images/name1.png"  alt="">
-          
-      </div>
-      <div class="intro-text">
-          <h1>Features</h1>
-          <div class="image-list">
-            <ul>
-              <li><img src="images/name1.png" alt=""></li>
-              <li><img src="images/arrow1.png" alt=""></li>
-              <li><img src="images/find1.png" alt=""></li>
-            </ul>
-          </div>
-      </div>
+    <nav>
+      <ul>
+        <li><img src="images/folder.png" alt=""></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="reps.php">Rep info</a></li>
+        <li><a href="staff.php">Staff info</a></li>
+        <li>Contact Support</li>
+      </ul>
+    </nav>
     </div>
   </body>
 </html>

@@ -31,16 +31,16 @@ else
 }
 
 $query = "
-SELECT * FROM rep_data 
+SELECT * FROM staff_data 
 ";
 
 if($_POST['query'] != '')
 {
   $query .= '
-  WHERE rep_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_phone_number LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_branch LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
+  WHERE staff_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_phone_number LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_branch LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_doa LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_dob LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
 }
 
-$query .= 'ORDER BY rep_id ASC ';
+$query .= 'ORDER BY staff_id ASC ';
 
 $filter_query = $query . 'LIMIT '.$start.', '.$limit.'';
 
@@ -58,11 +58,11 @@ $output = '
 <table class="table table-striped table-bordered">
   <tr>
     <th>ID</th>
-    <th>Rep Name</th>
-    <th>Rep Phone number</th>
-    <th>Rep Branch</th>
-    <th>Rep Email</th>
-    <th>Rep PR Code</th>
+    <th>Staff Name</th>
+    <th>Staff Phone number</th>
+    <th>Staff Branch</th>
+    <th>Staff DOB</th>
+    <th>Staff DOA</th>
   </tr>
 ';
 if($total_data > 0)
@@ -71,12 +71,12 @@ if($total_data > 0)
   {
     $output .= '
     <tr>
-      <td>'.$row["rep_id"].'</td>
-      <td>'.$row["rep_name"].'</td>
-      <td>'.$row["rep_phone_number"].'</td>
-      <td>'.$row["rep_branch"].'</td>
-      <td>'.$row["rep_email"].'</td>
-      <td>'.$row["rep_payroll_code"].'</td>
+      <td>'.$row["staff_id"].'</td>
+      <td>'.$row["staff_name"].'</td>
+      <td>'.$row["staff_phone_number"].'</td>
+      <td>'.$row["staff_branch"].'</td>
+      <td>'.$row["staff_dob"].'</td>
+      <td>'.$row["staff_doa"].'</td>
     </tr>
     ';
   }
