@@ -68,7 +68,6 @@ if($total_data > 0)
       <td>'.$row["rep_branch"].'</td>
       <td>'.$row["rep_email"].'</td>
       <td>'.$row["rep_payroll_code"].'</td>
-      <td><a href="edit-rep.php?id=$row[rep_id]">'.Edit.'</a></td>
       </tr>
     ';
   }
