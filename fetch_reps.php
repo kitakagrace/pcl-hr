@@ -6,17 +6,7 @@ error_reporting(0);
 
 $connect = new PDO("mysql:host=localhost; dbname=testhouse", "root", "");
 
-/*function get_total_row($connect)
-{
-  $query = "
-  SELECT * FROM tbl_webslesson_post
-  ";
-  $statement = $connect->prepare($query);
-  $statement->execute();
-  return $statement->rowCount();
-}
 
-$total_record = get_total_row($connect);*/
 
 $limit = '5';
 $page = 1;
@@ -33,6 +23,7 @@ else
 $query = "
 SELECT * FROM rep_data 
 ";
+
 
 if($_POST['query'] != '')
 {
@@ -77,7 +68,8 @@ if($total_data > 0)
       <td>'.$row["rep_branch"].'</td>
       <td>'.$row["rep_email"].'</td>
       <td>'.$row["rep_payroll_code"].'</td>
-    </tr>
+      <td><a href="edit-rep.php?id=$row[rep_id]">'.Edit.'</a></td>
+      </tr>
     ';
   }
 }

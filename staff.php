@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
     <link rel="stylesheet" href="display.css">
+    
   </head>
   <body>
     <br />
@@ -21,7 +22,7 @@
         
         <div class="card-body">
           <div class="form-group">
-            <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Type Rep's name here" />
+            <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Type Staff's name here" />
           </div>
           <div class="table-responsive" id="dynamic_content">
             

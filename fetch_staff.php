@@ -6,17 +6,7 @@ error_reporting(0);
 
 $connect = new PDO("mysql:host=localhost; dbname=testhouse", "root", "");
 
-/*function get_total_row($connect)
-{
-  $query = "
-  SELECT * FROM tbl_webslesson_post
-  ";
-  $statement = $connect->prepare($query);
-  $statement->execute();
-  return $statement->rowCount();
-}
 
-$total_record = get_total_row($connect);*/
 
 $limit = '5';
 $page = 1;
