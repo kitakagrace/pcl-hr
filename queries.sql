@@ -1,4 +1,4 @@
-CREATE TABLE `rep_data` (
+CREATE TABLE IF NOT EXISTS `rep_data` (
   `rep_id` int(11) auto_increment,
   `rep_name` varchar(255) NOT NULL,
   `rep_phone_number` varchar(255) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE `rep_data` (
   PRIMARY KEY  (`rep_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `staff_data` (
+CREATE TABLE IF NOT EXISTS `staff_data` (
   `staff_id` int(11) auto_increment,
   `staff_name` varchar(255) NOT NULL,
   `staff_phone_number` varchar(255) NOT NULL,
@@ -16,4 +16,11 @@ CREATE TABLE `staff_data` (
   `staff_dob` varchar(255) NOT NULL,
   `staff_doa` varchar(255) NOT NULL,
   PRIMARY KEY  (`staff_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `staff_id` int(11) auto_increment,
+  `staff_name` varchar(255) NOT NULL,
+  `staff_password` varchar(25) NOT NULL,
+  PRIMARY KEY  (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
