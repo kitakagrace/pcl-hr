@@ -5,63 +5,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+    
   </head>
   <body>
-    <br />
-   <?php require "navbar.php"; ?>
-    <div class="container">
-      <div class="start-chapter">
-          <div class= "heading-design">
-          <h1>Save Staff Data</h1>
-          </div>
-          <img src="images/name1.png"  alt="">
-  
-      </div>
-      <div class="intro-text">
-          <h1>Features</h1>
-          <div class="image-list">
-            <ul>
-              <li>  
-                  <div class="nice-ui">
-                      <div class="nice-ui-image" >
-                      <img src="images/name1.png" alt="">
-                      </div>
-                      <div class="nice-ui-text">
-                        <h3>Add Data:</h3>
-                        <p>Easily add data that you need in the future as an electronic record.</p>
-                      </div>
-                  </div>  
-              </li>
-              <li>
-                  <div class="nice-ui">
-                    <div class="nice-ui-image" >
-                    <img src="images/find1.png" alt="">
-                    </div>
-                    <div class="nice-ui-text">
-                      <h3>Instant Search :</h3>
-                      <p>Instant reply on data search without browsing to another page.</p>
-                    </div>
-                </div> 
-              </li>
-              <li>
-                  <div class="nice-ui">
-                    <div class="nice-ui-image" >
-                    <img src="images/arrow1.png" alt="">
-                    </div>
-                    <div class="nice-ui-text">
-                      <h3>Export/Import :</h3>
-                      <p>Export the information to excel or import excel information into the system.</p>
-                    </div>
-                </div> 
-              </li>
-            </ul>
-          </div>
-      </div>
-    </div>
-
-
-
+ <div class="container">
+    
+      <div class="card card-margin" style="width: 35rem;">
+        <div class="card-body">
+        <h5 class="card-title">LOGIN</h5>
+            <form action="processors/validateUser.php" method="POST">
+              <div class="form-group">
+                <label for="exampleInputText1">Username</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="staff_name" placeholder="Enter user name" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="staff_password" placeholder="Enter password">
+              </div>
+              <button type="submit" class="btn btn-primary" name="submit">LOGIN</button>
+            </form>
+        </div>
+        </div>
+ </div>
   </body>
 </html>
 

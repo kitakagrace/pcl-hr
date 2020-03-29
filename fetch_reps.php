@@ -54,6 +54,7 @@ $output = '
     <th>Rep Branch</th>
     <th>Rep Email</th>
     <th>Rep PR Code</th>
+    <th>Action</th>
   </tr>
 ';
 if($total_data > 0)
@@ -68,6 +69,10 @@ if($total_data > 0)
       <td>'.$row["rep_branch"].'</td>
       <td>'.$row["rep_email"].'</td>
       <td>'.$row["rep_payroll_code"].'</td>
+      <td>
+      <a href="edit-user.php?id='.$row["rep_id"].'">'.Edit.'</a> |
+      <a href="processors/deleteRep.php?rep_id='.$row["rep_id"].'">'.Delete.'</a>
+      </td>
       </tr>
     ';
   }

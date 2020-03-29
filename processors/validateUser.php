@@ -30,9 +30,9 @@ if(isset($_POST['submit'])){
     
     // If result matched $myusername and $mypassword, table row must be 1 row
     if($count == 1) {
-        header("location: ../index.php");
+        header("location: ../home.php");
      }else {
-        echo "Not Found";
+        echo "User not found";
      }
   
    

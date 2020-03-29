@@ -13,11 +13,11 @@
     <nav>
       <ul>
         <li><img src="images/folder.png" alt=""></li>
-        <li><a href="index.php">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="reps.php">Rep info</a></li>
         <li><a href="staff.php">Staff info</a></li>
         <li>Contact Support</li>
-        <li><a href="login.php"><button type="button" class="btn btn-sm btn-outline-warning">LOGIN</button></a></li>
+        <li><a href="index.php"><button type="button" class="btn btn-sm btn-outline-warning">LOGOUT</button></a></li>
       </ul>
     </nav>
     </div>

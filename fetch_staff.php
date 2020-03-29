@@ -53,6 +53,7 @@ $output = '
     <th>Staff Branch</th>
     <th>Staff DOB</th>
     <th>Staff DOA</th>
+    <th>Action</th>
   </tr>
 ';
 if($total_data > 0)
@@ -67,6 +68,10 @@ if($total_data > 0)
       <td>'.$row["staff_branch"].'</td>
       <td>'.$row["staff_dob"].'</td>
       <td>'.$row["staff_doa"].'</td>
+      <td>
+      <a href="edit-user.php?id='.$row["staff_id"].'">'.Edit.'</a> |
+      <a href="processors/deleteStaff.php?staff_id='.$row["staff_id"].'">'.Delete.'</a>
+      </td>
     </tr>
     ';
   }
