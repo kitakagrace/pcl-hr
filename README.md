@@ -1,6 +1,6 @@
 # pcl-hr
-rep management system
+Staff Management System
 
-THIS system was created in simple php, javascript, css and bootstrap.
+THIS system was created in Simple php, Javascript, CSS and bootstrap.
 
 NOTICE: "FRAMEWORKS ARE OVER RATED"
