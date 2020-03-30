@@ -12,6 +12,7 @@
    <?php require "navbar.php"; ?>
     <div class="container">
       <div class="start-chapter">
+        <img src="images/logo.png" class="logo" alt="" srcset="">
           <div class= "heading-design">
           <h1>Save Staff Data</h1>
           </div>

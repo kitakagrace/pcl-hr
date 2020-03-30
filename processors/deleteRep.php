@@ -22,7 +22,7 @@ if ($result_rep) {
 }
 
 if ($result_rep) {
-    header("Location:../staff.php");
+    header("Location:../reps.php");
 }
 
 ?>

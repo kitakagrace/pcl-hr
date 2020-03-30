@@ -4,11 +4,15 @@ margin:0;
 padding:0;
 
 }
+.logo{
+    margin-left: 20%;
+    padding-bottom: 170px;
+}
 nav{
     margin-left:20px;
     font-size: 17px;
-    border-bottom: 1px solid rgb(235, 235, 241);
     margin-right: 20px;
+    border-bottom: 1px solid rgb(219, 218, 218);
 }
 nav li:nth-child(1) { 
     padding-left:70px;
@@ -29,7 +33,11 @@ nav li:nth-child(4) {
 nav li:nth-child(5) { 
     padding-left:60px;
   }
-
+  nav li:nth-child(6) { 
+    padding-left:60px;
+    text-transform: capitalize;
+  }
+    
 nav ul li {
     display: inline-block;
     
@@ -43,7 +51,7 @@ a:hover{
     color: black;
 }
 .start-chapter{
-    border-bottom:1px solid rgb(130, 230, 243);
+    border-bottom:1px solid rgb(219, 218, 218);
     margin-top:100px;
     padding-bottom: 50px;
 }

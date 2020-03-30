@@ -1,3 +1,4 @@
+<?php require 'processors/sessionLogger.php' ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,7 +18,7 @@
         <li><a href="reps.php">Rep info</a></li>
         <li><a href="staff.php">Staff info</a></li>
         <li>Contact Support</li>
-        <li><a href="index.php"><button type="button" class="btn btn-sm btn-outline-warning">LOGOUT</button></a></li>
+        <li><button type="button" class="btn  btn-outline-warning"><?php echo htmlspecialchars($_SESSION["username"]); ?></button></li>
       </ul>
     </nav>
     </div>

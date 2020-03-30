@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//This file loggs in users from the index.php
 
 $servername  = 'localhost';
 $username = 'root';
@@ -30,6 +30,10 @@ if(isset($_POST['submit'])){
     
     // If result matched $myusername and $mypassword, table row must be 1 row
     if($count == 1) {
+        session_start();
+        $_SESSION["loggedin"] = true;
+        $_SESSION["username"] = $staff_name;
+        $_SESSION["loggedin_time"] = time();
         header("location: ../home.php");
      }else {
         echo "User not found";
