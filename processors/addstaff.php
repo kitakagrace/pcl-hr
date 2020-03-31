@@ -16,7 +16,7 @@ if($connect){
 
 
 if(isset($_POST['submit'])){
-if ($_SESSION["staff_role"]=="admin") {
+if ($_SESSION["staff_role"]=="admin") { 
     $staff_name = $_POST['staff_name'];
     $staff_phone_number  = $_POST['staff_phone_number'];
     $staff_branch = $_POST['staff_branch'];
