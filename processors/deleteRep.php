@@ -1,4 +1,7 @@
 <?php
+
+require 'sessionLogger.php';
+
 $servername  = 'localhost';
 $username = 'root';
 $password = '';
@@ -14,15 +17,16 @@ if($connect){
 
 $id = $_GET['rep_id'];
  
-// Deleting user row of rep from table based on given id
-$result_rep = mysqli_query($connect, "DELETE FROM rep_data WHERE rep_id = $id");
-
-if ($result_rep) {
-    echo "Deleted";
-}
+if ($_SESSION["staff_role"]=="admin"){
+    $result_rep = mysqli_query($connect, "DELETE FROM rep_data WHERE rep_id = $id");
 
 if ($result_rep) {
     header("Location:../reps.php");
 }
+}else{
+   echo "Not Permitted"; 
+}
+// Deleting user row of rep from table based on given id
+
 
 ?>
