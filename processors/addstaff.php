@@ -1,4 +1,5 @@
 <?php
+require 'sessionLogger.php';
 
 $servername  = 'localhost';
 $username = 'root';
@@ -15,6 +16,7 @@ if($connect){
 
 
 if(isset($_POST['submit'])){
+if ($_SESSION["staff_role"]=="admin") {
     $staff_name = $_POST['staff_name'];
     $staff_phone_number  = $_POST['staff_phone_number'];
     $staff_branch = $_POST['staff_branch'];
@@ -29,5 +31,8 @@ if(isset($_POST['submit'])){
     }
     mysqli_close($connect);
     header("Location:../staff.php");
+}else{
+    echo "You are not quaified to enter this data";
+}
 }
 ?>

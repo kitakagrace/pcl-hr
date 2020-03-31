@@ -22,5 +22,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `staff_id` int(11) auto_increment,
   `staff_name` varchar(255) NOT NULL,
   `staff_password` varchar(25) NOT NULL,
-  PRIMARY KEY  (`user_id`)
+  `staff_role` varchar(25) NOT NULL,
+  PRIMARY KEY  (`staff_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

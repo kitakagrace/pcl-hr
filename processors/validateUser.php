@@ -19,9 +19,9 @@ if($connect){
 if(isset($_POST['submit'])){
     $staff_name = $_POST['staff_name'];
     $staff_password  = $_POST['staff_password'];
-    
+    $staff_role = $_POST['staff_role'];
 
-    $sql = "SELECT staff_id FROM users WHERE staff_name = '$staff_name' and staff_password = '$staff_password'";
+    $sql = "SELECT staff_id FROM users WHERE staff_name = '$staff_name' and staff_password = '$staff_password' and staff_role = '$staff_role' ";
     $result = mysqli_query($connect,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     
@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
         session_start();
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $staff_name;
-        $_SESSION["loggedin_time"] = time();
+        $_SESSION["staff_role"] = $staff_role;
         header("location: ../home.php");
      }else {
         echo "User not found";

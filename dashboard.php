@@ -13,8 +13,8 @@
     
       <div class="card card-margin" style="width: 35rem;">
         <div class="card-body">
-        <h5 class="card-title">LOGIN</h5>
-            <form action="processors/validateUser.php" method="POST">
+        <h5 class="card-title">CREATE A USER</h5>
+            <form action="processors/createUser.php" method="POST">
               <div class="form-group">
                 <label for="exampleInputText1">Username</label>
                 <input type="text" class="form-control" id="exampleInputText1" name="staff_name" placeholder="Enter user name" >
@@ -27,7 +27,7 @@
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="staff_password" placeholder="Enter password">
               </div>
-              <button type="submit" class="btn btn-primary" name="submit">LOGIN</button>
+              <button type="submit" class="btn btn-primary" name="submit">CREATE USER</button>
             </form>
         </div>
         </div>
