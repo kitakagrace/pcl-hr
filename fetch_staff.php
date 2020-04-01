@@ -69,7 +69,8 @@ if($total_data > 0)
       <td>'.$row["staff_dob"].'</td>
       <td>'.$row["staff_doa"].'</td>
       <td>
-      <a href="edit-user.php?id='.$row["staff_id"].'">'.Edit.'</a> |
+      <a href="viewStaff.php?edit='.$row["staff_id"].'">'.View.'</a> |
+      <a href="editStaff.php?edit='.$row["staff_id"].'">'.Edit.'</a> |
       <a href="processors/deleteStaff.php?staff_id='.$row["staff_id"].'">'.Delete.'</a>
       </td>
     </tr>

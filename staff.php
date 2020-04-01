@@ -15,7 +15,7 @@
       
       <br />
       <div class="card">
-        <div class="card-header">Instant Search of Rep Data</div>
+        <div class="card-header">Instant Search of Staff Data</div>
         <div class="addBtn">
         <button type="button" class="btn btn-outline-primary "  onClick="revealFunction()" >ADD RECORD</button>
         </div>
@@ -47,6 +47,8 @@
             <input type="text" class="form-control" name="staff_dob" >
             <label for="exampleInputText1">DATE OF APPOINTMENT</label>
             <input type="text" class="form-control" name="staff_doa" required>
+            <label for="exampleInputText1">Confirm Username</label>
+            <input type="text" class="form-control" name="added_by" required>
           </div>
           <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
       </form>

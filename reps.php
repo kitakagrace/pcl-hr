@@ -47,6 +47,8 @@
             <input type="email" class="form-control" name="rep_email" >
             <label for="exampleInputText1">PayRoll Code</label>
             <input type="text" class="form-control" name="rep_payroll_code" required>
+            <label for="exampleInputText1">Confirm Username</label>
+            <input type="text" class="form-control" name="added_by" required>
           </div>
           <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
       </form>

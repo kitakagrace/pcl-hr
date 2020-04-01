@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS `rep_data` (
   `rep_branch` varchar(255) NOT NULL,
   `rep_email` varchar(255) NOT NULL,
   `rep_payroll_code` varchar(255) NOT NULL,
+  `added_by` varchar(255) NOT NULL
   PRIMARY KEY  (`rep_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -15,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `staff_data` (
   `staff_branch` varchar(255) NOT NULL,
   `staff_dob` varchar(255) NOT NULL,
   `staff_doa` varchar(255) NOT NULL,
+  `added_by` varchar(255) NOT NULL
   PRIMARY KEY  (`staff_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
