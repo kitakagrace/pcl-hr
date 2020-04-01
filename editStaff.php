@@ -68,15 +68,15 @@ if (isset($_POST['update'])) {
   <div class="form-group">
   <label for="exampleInputText1">REP NAME</label>
   <input type="hidden" class="form-control" name="staff_id" value="<?php echo $staff_id ?>">
-  <input type="text" class="form-control" name="staff_name" value="<?php echo $staff_name ?>" >
+  <input type="text" class="form-control" name="staff_name" required  value="<?php echo $staff_name ?>" >
   <label for="exampleInputEmail1">PHONE NUMBER</label>
-  <input type="number" class="form-control" name="staff_phone_number" value="<?php echo $staff_phone_number ?>">
+  <input type="number" class="form-control" name="staff_phone_number" required  value="<?php echo $staff_phone_number ?>">
   <label for="exampleInputText1">BRANCH</label>
-  <input type="text" class="form-control" name="staff_branch" value="<?php echo $staff_branch ?>" >
+  <input type="text" class="form-control" name="staff_branch" required  value="<?php echo $staff_branch ?>" >
   <label for="exampleInputText1">DATE OF BIRTH</label>
-  <input type="text" class="form-control" name="staff_dob" value="<?php echo $staff_dob ?>" >
+  <input type="text" class="form-control" name="staff_dob" required  value="<?php echo $staff_dob ?>" >
   <label for="exampleInputText1">DATE OF APPOINTMENT</label>
-  <input type="text" class="form-control" name="staff_doa" value="<?php echo $staff_doa ?>">
+  <input type="text" class="form-control" name="staff_doa" required  value="<?php echo $staff_doa ?>">
   </div>
   <button type="submit" class="btn btn-primary" name="update" >Submit Change</button>
   </form>

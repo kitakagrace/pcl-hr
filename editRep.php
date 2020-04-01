@@ -68,15 +68,15 @@ if (isset($_POST['update'])) {
   <div class="form-group">
   <label for="exampleInputText1">REP NAME</label>
   <input type="hidden" class="form-control" name="rep_id" value="<?php echo $rep_id ?>">
-  <input type="text" class="form-control" name="rep_name" value="<?php echo $rep_name ?>" >
+  <input type="text" class="form-control" name="rep_name" required  value="<?php echo $rep_name ?>" >
   <label for="exampleInputEmail1">PHONE NUMBER</label>
-  <input type="number" class="form-control" name="rep_phone_number" value="<?php echo $rep_phone_number ?>">
+  <input type="number" class="form-control" name="rep_phone_number" required  value="<?php echo $rep_phone_number ?>">
   <label for="exampleInputText1">BRANCH</label>
-  <input type="text" class="form-control" name="rep_branch" value="<?php echo $rep_branch ?>" >
+  <input type="text" class="form-control" name="rep_branch" required value="<?php echo $rep_branch ?>" >
   <label for="exampleInputEmail1">EMAIL ADDRESS</label>
-  <input type="email" class="form-control" name="rep_email" value="<?php echo $rep_email ?>">
+  <input type="email" class="form-control" name="rep_email" required  value="<?php echo $rep_email ?>">
   <label for="exampleInputText1">PayRoll Code</label>
-  <input type="text" class="form-control" name="rep_payroll_code" value="<?php echo $rep_payroll_code ?>">
+  <input type="text" class="form-control" name="rep_payroll_code" required  value="<?php echo $rep_payroll_code ?>">
   </div>
   <button type="submit" class="btn btn-primary" name="update" >Submit Change</button>
   </form>

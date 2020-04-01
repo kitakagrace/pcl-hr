@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pcl Reps Live Search</title>
+    <title>Pcl  Live Search</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
@@ -22,7 +22,7 @@
         
         <div class="card-body">
           <div class="form-group">
-            <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Type Staff's name here" />
+            <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Type Staff's info here" />
           </div>
           <div class="table-responsive" id="dynamic_content">
             
@@ -44,7 +44,7 @@
             <label for="exampleInputText1">BRANCH</label>
             <input type="text" class="form-control" name="staff_branch" required >
             <label for="exampleInputText1">DATE OF BIRTH</label>
-            <input type="text" class="form-control" name="staff_dob" >
+            <input type="text" class="form-control" name="staff_dob" required>
             <label for="exampleInputText1">DATE OF APPOINTMENT</label>
             <input type="text" class="form-control" name="staff_doa" required>
             <label for="exampleInputText1">Confirm Username</label>

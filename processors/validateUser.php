@@ -17,11 +17,11 @@ if($connect){
 
 
 if(isset($_POST['submit'])){
-    $staff_name = $_POST['staff_name'];
+    $staff_username = $_POST['staff_username'];
     $staff_password  = $_POST['staff_password'];
     $staff_role = $_POST['staff_role'];
 
-    $sql = "SELECT staff_id FROM users WHERE staff_name = '$staff_name' and staff_password = '$staff_password' and staff_role = '$staff_role' ";
+    $sql = "SELECT staff_id FROM users WHERE staff_username = '$staff_username' and staff_password = '$staff_password' and staff_role = '$staff_role' ";
     $result = mysqli_query($connect,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
     if($count == 1) {
         session_start();
         $_SESSION["loggedin"] = true;
-        $_SESSION["username"] = $staff_name;
+        $_SESSION["username"] = $staff_username;
         $_SESSION["staff_role"] = $staff_role;
         header("location: ../home.php");
      }else {

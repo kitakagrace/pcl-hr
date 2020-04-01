@@ -22,6 +22,7 @@ if (isset($_GET['edit'])) {
         $rep_branch = $n['rep_branch'];
         $rep_email = $n['rep_email'];
         $rep_payroll_code = $n['rep_payroll_code'];
+        $added_by = $n['added_by'];
     }
    
 }
@@ -58,6 +59,9 @@ if (isset($_GET['edit'])) {
   </br>
   <label for="exampleInputText1">PayRoll Code : </label>
   <?php echo $rep_payroll_code ?>
+  </br>
+  <label for="exampleInputText1">ADDED BY : </label>
+  <?php echo $added_by ?>
   </div>
   <a href="staff.php"><button  class="btn btn-primary">BACK</button></a>
   </div>

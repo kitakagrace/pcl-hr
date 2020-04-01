@@ -22,6 +22,7 @@ if (isset($_GET['edit'])) {
         $staff_branch = $n['staff_branch'];
         $staff_dob = $n['staff_dob'];
         $staff_doa = $n['staff_doa'];
+        $added_by = $n['added_by'];
     }
    
 }
@@ -60,6 +61,9 @@ if (isset($_GET['edit'])) {
   <br/>
   <label for="exampleInputText1">DATE OF APPOINTMENT : </label>
   <?php echo $staff_doa ?>
+  <br/>
+  <label for="exampleInputText1">ADDED BY : </label>
+  <?php echo $added_by ?>
   </div>
   <a href="staff.php"><button  class="btn btn-primary">BACK</button></a>
   </div>

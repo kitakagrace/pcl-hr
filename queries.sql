@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `staff_data` (
 CREATE TABLE IF NOT EXISTS `users` (
   `staff_id` int(11) auto_increment,
   `staff_name` varchar(255) NOT NULL,
+  `staff_username` varchar(255) NOT NULL,
   `staff_password` varchar(25) NOT NULL,
   `staff_role` varchar(25) NOT NULL,
   PRIMARY KEY  (`staff_id`)

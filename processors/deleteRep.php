@@ -10,9 +10,9 @@ $dbname = "testhouse";
 $connect  = mysqli_connect($servername,$username,$password,$dbname);
 
 if($connect){
-    echo 'success conect';
+    echo 'successful connection';
 }else{
-    echo 'failed conect';
+    echo 'failed connection';
 }
 
 $id = $_GET['rep_id'];
