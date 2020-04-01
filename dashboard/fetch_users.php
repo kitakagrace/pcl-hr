@@ -28,7 +28,7 @@ SELECT * FROM users
 if($_POST['query'] != '')
 {
   $query .= '
-  WHERE staff_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_role LIKE "%'.str_replace(' ', '%', $_POST['query']).'%"';
+  WHERE staff_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_role LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_username LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
 }
 
 $query .= 'ORDER BY staff_id ASC ';
