@@ -1,15 +1,10 @@
 <?php 
 error_reporting(0); 
 require 'processors/sessionLogger.php' ;
-$servername  = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = "testhouse";
+require 'dbConfig.php' ;
 
-$connect  = mysqli_connect($servername,$username,$password,$dbname);
-
-if (isset($_GET['edit'])) {
-    $staff_id = $_GET['edit'];
+if (isset($_GET['view'])) {
+    $staff_id = $_GET['view'];
     $update = true;
 
     $record = mysqli_query($connect, "SELECT * FROM staff_data  WHERE staff_id = $staff_id ");

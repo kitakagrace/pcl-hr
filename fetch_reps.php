@@ -28,7 +28,7 @@ SELECT * FROM rep_data
 if($_POST['query'] != '')
 {
   $query .= '
-  WHERE rep_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_phone_number LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_branch LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_payroll_code LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
+  WHERE rep_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_phone_number LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_branch LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_payroll_code LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR rep_email LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
 }
 
 $query .= 'ORDER BY rep_id ASC ';
@@ -70,7 +70,7 @@ if($total_data > 0)
       <td>'.$row["rep_email"].'</td>
       <td>'.$row["rep_payroll_code"].'</td>
       <td>
-      <a href="viewRep.php?edit='.$row["rep_id"].'">'.View.'</a> |
+      <a href="viewRep.php?view='.$row["rep_id"].'">'.View.'</a> |
       <a href="editRep.php?edit='.$row["rep_id"].'">'.Edit.'</a> |
       <a href="processors/deleteRep.php?rep_id='.$row["rep_id"].'">'.Delete.'</a>
       </td>

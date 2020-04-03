@@ -13,18 +13,17 @@ if($connect){
 
 if(isset($_POST['submit'])){
     if ($_SESSION["staff_role"] == "admin") {
-        $rep_name = $_POST['rep_name'];
-        $rep_phone_number  = $_POST['rep_phone_number'];
-        $rep_branch = $_POST['rep_branch'];
-        $rep_email = $_POST['rep_email'];
-        $rep_payroll_code = $_POST['rep_payroll_code'];
+        $staff_name = $_POST['staff_name'];
+        $staff_phone_number  = $_POST['staff_phone_number'];
+        $staff_branch = $_POST['staff_branch'];
+        $staff_dob = $_POST['staff_dob'];
+        $staff_doa = $_POST['staff_doa'];
         $added_by = $_POST['added_by'];
         if ($added_by == $_SESSION["username"]) {
-
-            $query = "INSERT INTO rep_data (rep_name,rep_phone_number,rep_branch,rep_email,rep_payroll_code,added_by) VALUES ('$rep_name','$rep_phone_number','$rep_branch','$rep_email','$rep_payroll_code','$added_by')";
+            $query = "INSERT INTO staff_data (staff_name,staff_phone_number,staff_branch,staff_dob,staff_doa,added_by) VALUES ('$staff_name','$staff_phone_number','$staff_branch','$staff_dob','$staff_doa','$added_by')";
 
             if (mysqli_query( $connect, $query )) {
-                header("Location:../reps.php");
+                header("Location:../staff.php");
             } else {
                 echo "Failed to create record";
             }
@@ -36,6 +35,5 @@ if(isset($_POST['submit'])){
         echo "You are not qualified to enter this data";
     }
 
-    // header("Location:../reps.php");
 }
 ?>

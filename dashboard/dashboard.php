@@ -17,19 +17,19 @@
             <form action="createUser.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputText1">Staff Name</label>
-                <input type="text" class="form-control" id="exampleInputText1" name="staff_name" placeholder="Enter Staff name" >
+                <input type="text" class="form-control" id="exampleInputText1" name="staff_name" placeholder="Enter Staff name" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputText1">User Name</label>
-                <input type="text" class="form-control" id="exampleInputText1" name="staff_username" placeholder="Enter user name" >
+                <input type="text" class="form-control" id="exampleInputText1" name="staff_username" placeholder="Enter user name" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputText1">Staff Role</label>
-                <input type="text" class="form-control" id="exampleInputText1" name="staff_role" placeholder="admin OR guest" >
+                <input type="text" class="form-control" id="exampleInputText1" name="staff_role" placeholder="admin OR guest" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="staff_password" placeholder="Enter password">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="staff_password" placeholder="Enter password" required>
               </div>
               <button type="submit" class="btn btn-primary" name="submit">CREATE USER</button>
             </form>

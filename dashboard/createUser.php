@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         $query = "INSERT INTO users (staff_name,staff_username,staff_role,staff_password) VALUES ('$staff_name','$staff_username','$staff_role','$staff_password')";
 
         if (mysqli_query( $connect, $query )) {
-            echo "New User created";
+            header("Location:../dashboard/dashboard.php");
 
         } else {
             echo "Failed to create record";

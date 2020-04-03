@@ -1,12 +1,8 @@
 <?php 
 error_reporting(0); 
 require 'processors/sessionLogger.php' ;
-$servername  = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = "testhouse";
 
-$connect  = mysqli_connect($servername,$username,$password,$dbname);
+require 'dbConfig.php' ;
 
 if (isset($_GET['edit'])) {
     $rep_id = $_GET['edit'];
