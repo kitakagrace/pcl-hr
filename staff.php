@@ -17,7 +17,7 @@
       <div class="card">
         <div class="card-header">Instant Search of Staff Data</div>
         <div class="addBtn">
-        <button type="button" class="btn btn-outline-primary "  onClick="revealFunction()" >ADD RECORD</button>
+     <a href="views/addstaff.php"><button type="button" class="btn btn-outline-primary ">ADD RECORD</button></a>
         </div>
         
         <div class="card-body">
@@ -30,45 +30,11 @@
         </div>
       </div>
 
-      
-      <form id="myForm"  action="processors/addstaff.php" method="POST">
-          <div class="cancelBtn">
-          <button type="button" class="btn btn-outline-warning" onClick="hideFunction()">CANCEL</button>
-          </div>
-          <div class="form-group">
-            
-            <label for="exampleInputText1">STAFF NAME</label>
-            <input type="text" class="form-control" name="staff_name" required>
-            <label for="exampleInputEmail1">PHONE NUMBER</label>
-            <input type="number" class="form-control" name="staff_phone_number" required>
-            <label for="exampleInputText1">BRANCH</label>
-            <input type="text" class="form-control" name="staff_branch" required >
-            <label for="exampleInputText1">DATE OF BIRTH</label>
-            <input type="text" class="form-control" name="staff_dob" required>
-            <label for="exampleInputText1">DATE OF APPOINTMENT</label>
-            <input type="text" class="form-control" name="staff_doa" required>
-            <label for="exampleInputText1">Confirm Username</label>
-            <input type="text" class="form-control" name="added_by" required>
-          </div>
-          <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
-      </form>
-
     </div>
   </body>
 </html>
 <script>
-// hiding form on page load
-  document.getElementById("myForm").style.display = "none";
-// hiding form on page load
 
-function revealFunction(){
-
-  document.getElementById("myForm").style.display = "block";
-}
-function hideFunction(){
-
-document.getElementById("myForm").style.display = "none";
-}
   $(document).ready(function(){
 
     load_data(1);

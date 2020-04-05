@@ -1,8 +1,8 @@
 <?php 
 error_reporting(0); 
-require 'processors/sessionLogger.php' ;
+require '../processors/sessionLogger.php' ;
 
-require 'dbConfig.php' ;
+require '../dbConfig.php' ;
 
 if (isset($_GET['edit'])) {
     $rep_id = $_GET['edit'];
@@ -35,7 +35,7 @@ if (isset($_POST['update'])) {
     
         $_SESSION['message'] = "Rep Updated";
     
-        header("Location:reps.php");
+        header("Location:../reps.php");
     }else{
         echo "You are not permitted to edit data";
     }
@@ -51,7 +51,7 @@ if (isset($_POST['update'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
-    <link rel="stylesheet" href="css/edit-info.css">
+    <link rel="stylesheet" href="../css/edit-info.css">
     
   </head>
   <body>
@@ -76,7 +76,7 @@ if (isset($_POST['update'])) {
   </div>
   <button type="submit" class="btn btn-primary" name="update" >Submit Change</button>
   </form>
-  <a href="staff.php"><button  class="btn btn-primary">BACK</button></a>
+  <a href="../staff.php"><button  class="btn btn-primary">BACK</button></a>
   </div>
   </div>
   </div>

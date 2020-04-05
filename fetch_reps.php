@@ -70,8 +70,8 @@ if($total_data > 0)
       <td>'.$row["rep_email"].'</td>
       <td>'.$row["rep_payroll_code"].'</td>
       <td>
-      <a href="viewRep.php?view='.$row["rep_id"].'">'.View.'</a> |
-      <a href="editRep.php?edit='.$row["rep_id"].'">'.Edit.'</a> |
+      <a href="views/viewRep.php?view='.$row["rep_id"].'">'.View.'</a> |
+      <a href="views/editRep.php?edit='.$row["rep_id"].'">'.Edit.'</a> |
       <a href="processors/deleteRep.php?rep_id='.$row["rep_id"].'">'.Delete.'</a>
       </td>
       </tr>
