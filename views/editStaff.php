@@ -17,6 +17,7 @@ if (isset($_GET['edit'])) {
         $staff_branch = $n['staff_branch'];
         $staff_dob = $n['staff_dob'];
         $staff_doa = $n['staff_doa'];
+        $added_by = $n['added_by'];
     }
    
 }
@@ -28,13 +29,18 @@ if (isset($_POST['update'])) {
         $staff_branch = $_POST['staff_branch'];
         $staff_doa = $_POST['staff_doa'];
         $staff_dob = $_POST['staff_dob'];
-        
-    
-        mysqli_query($connect, "UPDATE staff_data SET staff_name = '$staff_name' , staff_phone_number = '$staff_phone_number', staff_branch = '$staff_branch', staff_doa = '$staff_doa', staff_dob = '$staff_dob' WHERE staff_id = $staff_id ");
+        $added_by = $_POST['added_by'];
+
+        if ($added_by == $_SESSION["username"]){
+        mysqli_query($connect, "UPDATE staff_data SET staff_name = '$staff_name' , staff_phone_number = '$staff_phone_number', staff_branch = '$staff_branch', staff_doa = '$staff_doa', staff_dob = '$staff_dob',  added_by = '$added_by' WHERE staff_id = $staff_id ");
     
         $_SESSION['message'] = "Staff Updated";
     
         header("Location:../staff.php");
+        }else{
+            echo "Username not matching";
+        }
+        
     }else{
         echo "You are not permitted to edit data";
     }
@@ -72,6 +78,8 @@ if (isset($_POST['update'])) {
   <input type="text" class="form-control" name="staff_dob" required  value="<?php echo $staff_dob ?>" >
   <label for="exampleInputText1">DATE OF APPOINTMENT</label>
   <input type="text" class="form-control" name="staff_doa" required  value="<?php echo $staff_doa ?>">
+  <label for="exampleInputText1">Confirm Username</label>
+  <input type="text" class="form-control" name="added_by" value="<?php echo $added_by ?>" required>
   </div>
   <button type="submit" class="btn btn-primary" name="update" >Submit Change</button>
   </form>

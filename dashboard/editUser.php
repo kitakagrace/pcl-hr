@@ -31,11 +31,16 @@ if (isset($_POST['update'])) {
         $staff_role= $_POST['staff_role'];
         $staff_password= $_POST['staff_password'];
     
-        mysqli_query($connect, "UPDATE users SET staff_name = '$staff_name' , staff_username = '$staff_username', staff_role = '$staff_role', staff_password = '$staff_password' WHERE staff_id = $staff_id ");
+        $query = mysqli_query($connect, "UPDATE users SET staff_name = '$staff_name' , staff_username = '$staff_username', staff_role = '$staff_role', staff_password = '$staff_password' WHERE staff_id = $staff_id ");
     
         $_SESSION['message'] = "Staff Login Credentials  Updated";
     
-        // header("Location:users.php");
+        if (condition) {
+          header("Location:users.php");
+        }else{
+          echo "Failed to edit user credentials";
+        }
+        
 
           
     

@@ -18,6 +18,7 @@ if (isset($_GET['edit'])) {
         $rep_branch = $n['rep_branch'];
         $rep_email = $n['rep_email'];
         $rep_payroll_code = $n['rep_payroll_code'];
+        $added_by = $n['added_by'];
     }
    
 }
@@ -30,12 +31,18 @@ if (isset($_POST['update'])) {
         $rep_branch = $_POST['rep_branch'];
         $rep_email = $_POST['rep_email'];
         $rep_payroll_code = $_POST['rep_payroll_code'];
-    
-        mysqli_query($connect, "UPDATE rep_data SET rep_name = '$rep_name' , rep_phone_number = '$rep_phone_number', rep_branch = '$rep_branch', rep_email = '$rep_email', rep_payroll_code = '$rep_payroll_code' WHERE rep_id = $rep_id ");
+        $added_by = $_POST['added_by'];
+
+        if ($added_by == $_SESSION["username"]){
+            mysqli_query($connect, "UPDATE rep_data SET rep_name = '$rep_name' , rep_phone_number = '$rep_phone_number', rep_branch = '$rep_branch', rep_email = '$rep_email', rep_payroll_code = '$rep_payroll_code',added_by = '$added_by' WHERE rep_id = $rep_id ");
     
         $_SESSION['message'] = "Rep Updated";
     
         header("Location:../reps.php");
+        }else{
+            echo "Username not matching";
+        }
+        
     }else{
         echo "You are not permitted to edit data";
     }
@@ -73,10 +80,12 @@ if (isset($_POST['update'])) {
   <input type="email" class="form-control" name="rep_email" required  value="<?php echo $rep_email ?>">
   <label for="exampleInputText1">PayRoll Code</label>
   <input type="text" class="form-control" name="rep_payroll_code" required  value="<?php echo $rep_payroll_code ?>">
+  <label for="exampleInputText1">Confirm Username</label>
+  <input type="text" class="form-control" name="added_by" value="<?php echo $added_by ?>" required>
   </div>
   <button type="submit" class="btn btn-primary" name="update" >Submit Change</button>
   </form>
-  <a href="../staff.php"><button  class="btn btn-primary">BACK</button></a>
+  <a href="../reps.php"><button  class="btn btn-primary">BACK</button></a>
   </div>
   </div>
   </div>

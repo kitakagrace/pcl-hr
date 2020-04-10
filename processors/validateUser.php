@@ -4,11 +4,6 @@
 
 require '../dbConfig.php' ;
 
-if($connect){
-    echo 'success conect';
-}else{
-    echo 'failed conect';
-}
 
 
 if(isset($_POST['submit'])){

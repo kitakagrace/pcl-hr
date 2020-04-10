@@ -15,10 +15,12 @@
       <br />
       <div class="card">
         <div class="card-header">Instant Search of Users</div>
-        <div class="addBtn">
-        <a href="dashboard.php"><button type="button" class="btn btn-outline-primary "  onClick="revealFunction()" >ADD RECORD</button></a>
-        </div>
-        
+        <table>
+          <tr>
+          <th><a href="dashboard.php"><button type="button" class="btn btn-outline-primary ">ADD RECORD</button></a></th>
+          <th><a href="activityLog.php"><button type="button" class="btn btn-outline-danger ">ACTIVITY LOG</button></a></th>
+          </tr>
+        </table>
         <div class="card-body">
           <div class="form-group">
             <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Type User's info here" />

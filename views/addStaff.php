@@ -5,9 +5,9 @@ require '../processors/sessionLogger.php';
 require '../dbConfig.php' ;
 
 if($connect){
-    echo 'success conect';
+   // echo 'success conect';
 }else{
-    echo 'failed conect';
+    echo 'failed connection';
 }
 
 
@@ -54,6 +54,7 @@ if(isset($_POST['submit'])){
   <h5 class="card=title">ADD REP</h5>
 <form id="myForm"  action="" method="POST"> 
           <div class="form-group">
+          <div class="form-group">
             <label for="exampleInputText1">STAFF NAME</label>
             <input type="text" class="form-control" name="staff_name" required>
             <label for="exampleInputEmail1">PHONE NUMBER</label>
@@ -70,6 +71,7 @@ if(isset($_POST['submit'])){
           <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
           </div>
       </form>
+      <a href="../staff.php"><button class="btn btn-primary">BACK</button></a> 
 </div>
 </div>
 </div>
