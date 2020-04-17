@@ -1,12 +1,6 @@
 <?php 
  error_reporting(0); 
-$servername  = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = "testhouse";
-
-$connect  = mysqli_connect($servername,$username,$password,$dbname);
-
+ require '../dbConfig.php';
 if (isset($_GET['edit'])) {
     $staff_id = $_GET['edit'];
     $update = true;

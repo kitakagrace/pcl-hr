@@ -1,17 +1,8 @@
 <?php
 
-$servername  = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = "testhouse";
+require '../dbConfig.php';
 
-$connect  = mysqli_connect($servername,$username,$password,$dbname);
 
-if($connect){
-    echo 'successful connection';
-}else{
-    echo 'failed connection';
-}
 
 $id = $_GET['staff_id'];
  

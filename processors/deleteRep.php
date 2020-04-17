@@ -12,7 +12,7 @@ if($connect){
 
 $id = $_GET['rep_id'];
  
-if ($_SESSION["staff_role"]=="superadmin"){
+if ($_SESSION["staff_role"]=="admin"){
     $result_rep = mysqli_query($connect, "DELETE FROM rep_data WHERE rep_id = $id");
 
 if ($result_rep) {

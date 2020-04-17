@@ -17,6 +17,12 @@ if (isset($_GET['view'])) {
         $rep_branch = $n['rep_branch'];
         $rep_email = $n['rep_email'];
         $rep_payroll_code = $n['rep_payroll_code'];
+        $rep_bank = $n['rep_bank'];
+        $rep_account_number = $n['rep_account_number'];
+        $rep_nssf_number = $n['rep_nssf_number'];
+        $rep_nin = $n['rep_nin'];
+        $rep_tin_number = $n['rep_tin_number'];
+        $rep_doa = $n['rep_doa'];
         $added_by = $n['added_by'];
     }
    
@@ -54,6 +60,24 @@ if (isset($_GET['view'])) {
   </br>
   <label for="exampleInputText1">PayRoll Code : </label>
   <?php echo $rep_payroll_code ?>
+  </br>
+  <label for="exampleInputText1">Rep Bank : </label>
+  <?php echo $rep_bank ?>
+  </br>
+  <label for="exampleInputText1">Rep Account Number : </label>
+  <?php echo $rep_account_number ?>
+  </br>
+  <label for="exampleInputText1">Rep TIN Number : </label>
+  <?php echo $rep_tin_number ?>
+  </br>
+  <label for="exampleInputText1">Rep NSSF Number : </label>
+  <?php echo $rep_nssf_number ?>
+  </br>
+  <label for="exampleInputText1">Rep NIN : </label>
+  <?php echo $rep_nin ?>
+  </br>
+  <label for="exampleInputText1">Date Of Appointment : </label>
+  <?php echo $rep_doa ?>
   </br>
   <label for="exampleInputText1">ADDED BY : </label>
   <?php echo $added_by ?>

@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0); 
+//error_reporting(0); 
 require '../processors/sessionLogger.php' ;
 
 require '../dbConfig.php' ;
@@ -18,6 +18,12 @@ if (isset($_GET['edit'])) {
         $rep_branch = $n['rep_branch'];
         $rep_email = $n['rep_email'];
         $rep_payroll_code = $n['rep_payroll_code'];
+        $rep_bank = $n['rep_bank'];
+        $rep_account_number = $n['rep_account_number'];
+        $rep_tin_number = $n['rep_tin_number'];
+        $rep_nssf_number = $n['rep_nssf_number'];
+        $rep_nin = $n['rep_nin'];
+        $rep_doa = $n['rep_doa'];
         $added_by = $n['added_by'];
     }
    
@@ -31,10 +37,16 @@ if (isset($_POST['update'])) {
         $rep_branch = $_POST['rep_branch'];
         $rep_email = $_POST['rep_email'];
         $rep_payroll_code = $_POST['rep_payroll_code'];
+        $rep_bank = $_POST['rep_bank'];
+        $rep_account_number = $_POST['rep_account_number'];
+        $rep_tin_number = $_POST['rep_tin_number'];
+        $rep_nssf_number = $_POST['rep_nssf_number'];
+        $rep_nin = $_POST['rep_nin'];
+        $rep_doa = $_POST['rep_doa'];
         $added_by = $_POST['added_by'];
 
         if ($added_by == $_SESSION["username"]){
-            mysqli_query($connect, "UPDATE rep_data SET rep_name = '$rep_name' , rep_phone_number = '$rep_phone_number', rep_branch = '$rep_branch', rep_email = '$rep_email', rep_payroll_code = '$rep_payroll_code',added_by = '$added_by' WHERE rep_id = $rep_id ");
+            mysqli_query($connect, "UPDATE rep_data SET rep_name = '$rep_name' , rep_phone_number = '$rep_phone_number', rep_branch = '$rep_branch', rep_email = '$rep_email', rep_payroll_code = '$rep_payroll_code',rep_bank = '$rep_bank',rep_account_number = '$rep_account_number',rep_tin_number = '$rep_tin_number',rep_nssf_number = '$rep_nssf_number',rep_nin = '$rep_nin',rep_doa = '$rep_doa',added_by = '$added_by' WHERE rep_id = $rep_id ");
     
         $_SESSION['message'] = "Rep Updated";
     
@@ -80,6 +92,18 @@ if (isset($_POST['update'])) {
   <input type="email" class="form-control" name="rep_email" required  value="<?php echo $rep_email ?>">
   <label for="exampleInputText1">PayRoll Code</label>
   <input type="text" class="form-control" name="rep_payroll_code" required  value="<?php echo $rep_payroll_code ?>">
+  <label for="exampleInputText1">Bank</label>
+  <input type="text" class="form-control" name="rep_bank" required  value="<?php echo $rep_bank ?>">
+  <label for="exampleInputText1">Account number</label>
+  <input type="text" class="form-control" name="rep_account_number" required  value="<?php echo $rep_account_number ?>">
+  <label for="exampleInputText1">TIN</label>
+  <input type="text" class="form-control" name="rep_tin_number" required  value="<?php echo $rep_tin_number ?>">
+  <label for="exampleInputText1">NSSF</label>
+  <input type="text" class="form-control" name="rep_nssf_number" required  value="<?php echo $rep_nssf_number ?>">
+  <label for="exampleInputText1">NIN</label>
+  <input type="text" class="form-control" name="rep_nin" required  value="<?php echo $rep_nin ?>">
+  <label for="exampleInputText1">Date Of Appointment</label>
+  <input type="text" class="form-control" name="rep_doa" required  value="<?php echo $rep_doa ?>">
   <label for="exampleInputText1">Confirm Username</label>
   <input type="text" class="form-control" name="added_by" value="<?php echo $added_by ?>" required>
   </div>

@@ -2,7 +2,8 @@
 
 require '../dbConfig.php';
 
-$rep_activity = mysqli_query($connect, "SELECT * FROM rep_data");
+
+$rep_activity = mysqli_query($connect, "SELECT * FROM rep_data ORDER by rep_id  DESC");
 
 
 $staff_activity = mysqli_query($connect, "SELECT * FROM staff_data");
@@ -24,7 +25,7 @@ $staff_activity = mysqli_query($connect, "SELECT * FROM staff_data");
    while ($row = mysqli_fetch_row($rep_activity)) {
        echo '
        <ul>
-       <li><p>'.$row[1]. " " .'Added by'." ".$row[6].'</p></li>
+       <li><p>'.$row[3]." "."(Rep)" .'Added by'." ".$row[2].'</p></li>
        </ul>
 
        ';
@@ -32,7 +33,7 @@ $staff_activity = mysqli_query($connect, "SELECT * FROM staff_data");
    while ($row = mysqli_fetch_row($staff_activity)) {
     echo '
     <ul>
-    <li><p>'.$row[1]. " " .'Added by'." ".$row[6].'</p></li>
+    <li><p>'.$row[1]." ". "(Staff) " .'Added by'." ".$row[6].'</p></li>
     </ul>
 
     ';
