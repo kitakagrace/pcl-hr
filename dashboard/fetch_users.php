@@ -4,7 +4,7 @@
 error_reporting(0); 
 
 
-$connect = new PDO("mysql:host=localhost; dbname=testhouse", "root", "");
+$connect = new PDO("mysql:host=us-cdbr-iron-east-04.cleardb.net; dbname=heroku_184a789d3d8c2d7", "b1b46812a8f310", "226540aa");
 
 
 
