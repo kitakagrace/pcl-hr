@@ -1,12 +1,7 @@
 <?php 
 error_reporting(0); 
-require 'processors/sessionLogger.php' ;
-$servername  = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = "testhouse";
-
-$connect  = mysqli_connect($servername,$username,$password,$dbname);
+require '../processors/sessionLogger.php' ;
+require '../dbConfig.php' ;
 
 if (isset($_GET['edit'])) {
     $staff_id = $_GET['edit'];
@@ -22,6 +17,7 @@ if (isset($_GET['edit'])) {
         $staff_branch = $n['staff_branch'];
         $staff_dob = $n['staff_dob'];
         $staff_doa = $n['staff_doa'];
+        $added_by = $n['added_by'];
     }
    
 }
@@ -33,13 +29,18 @@ if (isset($_POST['update'])) {
         $staff_branch = $_POST['staff_branch'];
         $staff_doa = $_POST['staff_doa'];
         $staff_dob = $_POST['staff_dob'];
-        
-    
-        mysqli_query($connect, "UPDATE staff_data SET staff_name = '$staff_name' , staff_phone_number = '$staff_phone_number', staff_branch = '$staff_branch', staff_doa = '$staff_doa', staff_dob = '$staff_dob' WHERE staff_id = $staff_id ");
+        $added_by = $_POST['added_by'];
+
+        if ($added_by == $_SESSION["username"]){
+        mysqli_query($connect, "UPDATE staff_data SET staff_name = '$staff_name' , staff_phone_number = '$staff_phone_number', staff_branch = '$staff_branch', staff_doa = '$staff_doa', staff_dob = '$staff_dob',  added_by = '$added_by' WHERE staff_id = $staff_id ");
     
         $_SESSION['message'] = "Staff Updated";
     
-        header("Location:staff.php");
+        header("Location:../staff.php");
+        }else{
+            echo "Username not matching";
+        }
+        
     }else{
         echo "You are not permitted to edit data";
     }
@@ -55,7 +56,7 @@ if (isset($_POST['update'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
-    <link rel="stylesheet" href="css/edit-info.css">
+    <link rel="stylesheet" href="../css/edit-info.css">
     
   </head>
   <body>
@@ -68,19 +69,21 @@ if (isset($_POST['update'])) {
   <div class="form-group">
   <label for="exampleInputText1">REP NAME</label>
   <input type="hidden" class="form-control" name="staff_id" value="<?php echo $staff_id ?>">
-  <input type="text" class="form-control" name="staff_name" value="<?php echo $staff_name ?>" >
+  <input type="text" class="form-control" name="staff_name" required  value="<?php echo $staff_name ?>" >
   <label for="exampleInputEmail1">PHONE NUMBER</label>
-  <input type="number" class="form-control" name="staff_phone_number" value="<?php echo $staff_phone_number ?>">
+  <input type="number" class="form-control" name="staff_phone_number" required  value="<?php echo $staff_phone_number ?>">
   <label for="exampleInputText1">BRANCH</label>
-  <input type="text" class="form-control" name="staff_branch" value="<?php echo $staff_branch ?>" >
+  <input type="text" class="form-control" name="staff_branch" required  value="<?php echo $staff_branch ?>" >
   <label for="exampleInputText1">DATE OF BIRTH</label>
-  <input type="text" class="form-control" name="staff_dob" value="<?php echo $staff_dob ?>" >
+  <input type="text" class="form-control" name="staff_dob" required  value="<?php echo $staff_dob ?>" >
   <label for="exampleInputText1">DATE OF APPOINTMENT</label>
-  <input type="text" class="form-control" name="staff_doa" value="<?php echo $staff_doa ?>">
+  <input type="text" class="form-control" name="staff_doa" required  value="<?php echo $staff_doa ?>">
+  <label for="exampleInputText1">Confirm Username</label>
+  <input type="text" class="form-control" name="added_by" value="<?php echo $added_by ?>" required>
   </div>
   <button type="submit" class="btn btn-primary" name="update" >Submit Change</button>
   </form>
-  <a href="staff.php"><button  class="btn btn-primary">BACK</button></a>
+  <a href="../staff.php"><button  class="btn btn-primary">BACK</button></a>
   </div>
   </div>
   </div>

@@ -21,13 +21,14 @@ else
 }
 
 $query = "
-SELECT * FROM staff_data 
+SELECT * FROM users 
 ";
+
 
 if($_POST['query'] != '')
 {
   $query .= '
-  WHERE staff_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_phone_number LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_branch LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_doa LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_dob LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
+  WHERE staff_name LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_role LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" OR staff_username LIKE "%'.str_replace(' ', '%', $_POST['query']).'%" ';
 }
 
 $query .= 'ORDER BY staff_id ASC ';
@@ -49,10 +50,8 @@ $output = '
   <tr>
     <th>ID</th>
     <th>Staff Name</th>
-    <th>Staff Phone number</th>
-    <th>Staff Branch</th>
-    <th>Staff DOB</th>
-    <th>Staff DOA</th>
+    <th>Staff Username</th>
+    <th>Staff Role</th>
     <th>Action</th>
   </tr>
 ';
@@ -64,16 +63,13 @@ if($total_data > 0)
     <tr>
       <td>'.$row["staff_id"].'</td>
       <td>'.$row["staff_name"].'</td>
-      <td>'.$row["staff_phone_number"].'</td>
-      <td>'.$row["staff_branch"].'</td>
-      <td>'.$row["staff_dob"].'</td>
-      <td>'.$row["staff_doa"].'</td>
+      <td>'.$row["staff_username"].'</td>
+      <td>'.$row["staff_role"].'</td>
       <td>
-      <a href="views/viewStaff.php?view='.$row["staff_id"].'">'.View.'</a> |
-      <a href="views/editStaff.php?edit='.$row["staff_id"].'">'.Edit.'</a> |
-      <a href="processors/deleteStaff.php?staff_id='.$row["staff_id"].'">'.Delete.'</a>
+      <a href="editUser.php?edit='.$row["staff_id"].'">'.Edit.'</a> |
+      <a href="deleteUser.php?staff_id='.$row["staff_id"].'">'.Delete.'</a>
       </td>
-    </tr>
+      </tr>
     ';
   }
 }

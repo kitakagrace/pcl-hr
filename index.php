@@ -17,7 +17,7 @@
             <form action="processors/validateUser.php" method="POST">
               <div class="form-group">
                 <label for="exampleInputText1">Username</label>
-                <input type="text" class="form-control" id="exampleInputText1" name="staff_name" placeholder="Enter user name" >
+                <input type="text" class="form-control" id="exampleInputText1" name="staff_username" placeholder="Enter user name" >
               </div>
               <div class="form-group">
                 <label for="exampleInputText1">Staff Role</label>

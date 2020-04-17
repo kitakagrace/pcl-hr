@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(117, 59, 226);
+}
+ul li{
+    list-style: none;
+    margin-top: 10px;
+    border:1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    padding:10px;
+    width:60%;
+}
+.list-center{
+    margin-left: 20%;
+}
+
