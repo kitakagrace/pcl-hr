@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
         $_SESSION["username"] = $staff_username;
         $_SESSION["staff_role"] = $staff_role;
         header("location: ../home.php");
-        if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 1)) {
+        if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 1800)) {
                       session_destroy();
                       session_unset();
                       header('location: index.php');
